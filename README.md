@@ -1,2 +1,1 @@
-# CAH
-Cards Against Hellborns
+# Cards Against Hellborns
