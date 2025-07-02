@@ -1,0 +1,164 @@
+/* Cards Against Hellborns Styles */
+.App {
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  min-height: 100vh;
+  background-color: #7f1d1d; /* red-900 */
+}
+
+/* Card hover effects */
+.card-hover {
+  transition: all 0.2s ease-in-out;
+}
+
+.card-hover:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 16px rgba(220, 38, 38, 0.3); /* red shadow */
+}
+
+/* Black card styles (now red-themed) */
+.black-card {
+  background: linear-gradient(135deg, #1a1a1a 0%, #000 100%);
+  border: 2px solid #dc2626; /* red-600 */
+  box-shadow: 0 4px 8px rgba(220, 38, 38, 0.2);
+}
+
+/* Red card styles (formerly white cards) */
+.red-card {
+  background: linear-gradient(135deg, #dc2626 0%, #b91c1c 100%); /* red-600 to red-700 */
+  border: 2px solid #991b1b; /* red-800 */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  color: #ffffff;
+}
+
+.red-card:hover {
+  border-color: #f87171; /* red-400 */
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(248, 113, 113, 0.4);
+  background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%); /* red-500 to red-600 */
+}
+
+.red-card.selected {
+  border-color: #fca5a5; /* red-300 */
+  background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%); /* red-500 to red-600 */
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(252, 165, 165, 0.4);
+}
+
+/* Loading animations */
+@keyframes pulse {
+  0% { opacity: 1; }
+  50% { opacity: 0.5; }
+  100% { opacity: 1; }
+}
+
+.loading-pulse {
+  animation: pulse 2s infinite;
+}
+
+@keyframes hellfire {
+  0% { 
+    box-shadow: 0 0 5px #dc2626, 0 0 10px #dc2626, 0 0 15px #dc2626;
+  }
+  50% { 
+    box-shadow: 0 0 10px #ef4444, 0 0 20px #ef4444, 0 0 30px #ef4444;
+  }
+  100% { 
+    box-shadow: 0 0 5px #dc2626, 0 0 10px #dc2626, 0 0 15px #dc2626;
+  }
+}
+
+.hellfire-glow {
+  animation: hellfire 2s infinite;
+}
+
+/* Button animations */
+.btn-primary {
+  background: linear-gradient(135deg, #dc2626 0%, #991b1b 100%); /* red-600 to red-800 */
+  border: none;
+  transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+  background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%); /* red-500 to red-600 */
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(220, 38, 38, 0.4);
+}
+
+/* Game state transitions */
+.fade-enter {
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.fade-enter-active {
+  opacity: 1;
+  transform: translateY(0);
+  transition: all 0.5s ease;
+}
+
+.fade-exit {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.fade-exit-active {
+  opacity: 0;
+  transform: translateY(-20px);
+  transition: all 0.5s ease;
+}
+
+/* Responsive design adjustments */
+@media (max-width: 768px) {
+  .red-card {
+    min-height: 120px;
+    font-size: 0.9rem;
+  }
+  
+  .black-card {
+    min-height: 160px;
+    font-size: 1rem;
+  }
+}
+
+/* Scroll bar styling */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #450a0a; /* red-950 */
+}
+
+::-webkit-scrollbar-thumb {
+  background: #dc2626; /* red-600 */
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #ef4444; /* red-500 */
+}
+
+/* Additional hellish effects */
+.text-glow {
+  text-shadow: 0 0 10px #dc2626, 0 0 20px #dc2626, 0 0 30px #dc2626;
+}
+
+.border-glow {
+  box-shadow: 0 0 5px #dc2626, inset 0 0 5px #dc2626;
+}
+
+/* Input field styling for red theme */
+input[type="text"] {
+  background: rgba(69, 10, 10, 0.8) !important; /* red-950 with opacity */
+  border: 2px solid #dc2626 !important; /* red-600 */
+  color: #fecaca !important; /* red-200 */
+}
+
+input[type="text"]:focus {
+  border-color: #f87171 !important; /* red-400 */
+  box-shadow: 0 0 0 3px rgba(220, 38, 38, 0.1) !important;
+}
+
+input[type="text"]::placeholder {
+  color: #f87171 !important; /* red-400 */
+}
